@@ -33,7 +33,7 @@ class SearchController extends Controller
                  $collection = collect($array);
                 $count = count($arr) - 1;
             }
-
+            // dd($good, $count ,$collection);
         return view('search.search', compact('good', 'count', 'collection'));
     }
 }

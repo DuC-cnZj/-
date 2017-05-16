@@ -90,7 +90,7 @@
      
         <div class="panel panel-info" style="  position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 100">
             <div class="panel-heading">
-                <h3 class="panel-title">快件编号：{{ $good->number }}----由快递员 {{ $good->courier->name }} 运送</h3>
+                <h3 class="panel-title">快件编号：{{ $good->number }}----快递员 {{ $good->courier->name ?? '正在'}} 运送中</h3>
             </div>
             <div class="panel-body" style="width: 1200px;height: 250px">
                    <div id="app" class="container col-md-offset-1">
