@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Courier;
 use Illuminate\Http\Request;
-use App\SubStation;
+use App\Substation;
 use App\Repositories\CourierRepository;
 
 class CourierController extends Controller
