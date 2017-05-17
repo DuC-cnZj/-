@@ -31,7 +31,7 @@
 
     <!-- Modernizr JS -->
     <script src="{{asset('qian/js/modernizr-2.6.2.min.js')}}"></script>
- <style>
+{{--  <style>
         @font-face
         {
         font-family: myFirstFont;
@@ -46,7 +46,7 @@
             font-family:myFirstFont;
             font-size: 1.5em;
         }
- </style>
+ </style> --}}
 
     </head>
     <body>
