@@ -154,7 +154,7 @@
                     <a href="{{  asset('qian/images/img_1.jpg') }}" class="fh5co-card-item image-popup">
                         <figure>
                             <div class="overlay"><i class="ti-plus"></i></div>
-                            <img src="{{ asset('qian/images/img_1.jpg') }}" alt="Image" class="img-responsive">
+                            <img class="lazy" data-original="{{ asset('qian/images/img_1.jpg') }}" width="334" height="253" alt="Image" class="img-responsive">
                         </figure>
                         <div class="fh5co-text">
                             <h2>快递服务</h2>
@@ -167,7 +167,7 @@
                     <a href="{{  asset('qian/images/img_2.jpg') }}" class="fh5co-card-item image-popup">
                         <figure>
                             <div class="overlay"><i class="ti-plus"></i></div>
-                            <img src="{{ asset('qian/images/img_2.jpg') }}" alt="Image" class="img-responsive">
+                            <img class="lazy" data-original="{{ asset('qian/images/img_2.jpg') }}" alt="Image" class="img-responsive">
                         </figure>
                         <div class="fh5co-text">
                             <h2>Cheese and Garlic Toast</h2>
@@ -180,7 +180,7 @@
                     <a href="{{  asset('qian/images/img_3.jpg') }}" class="fh5co-card-item image-popup">
                         <figure>
                             <div class="overlay"><i class="ti-plus"></i></div>
-                            <img src="{{ asset('qian/images/img_3.jpg') }}" alt="Image" class="img-responsive">
+                            <img class="lazy" data-original="{{ asset('qian/images/img_3.jpg') }}" alt="Image" class="img-responsive">
                         </figure>
                         <div class="fh5co-text">
                             <h2>理财</h2>
@@ -196,7 +196,7 @@
                     <a href="{{  asset('qian/images/img_4.jpg') }}" class="fh5co-card-item image-popup">
                         <figure>
                             <div class="overlay"><i class="ti-plus"></i></div>
-                            <img src="{{ asset('qian/images/img_4.jpg') }}" alt="Image" class="img-responsive">
+                            <img class="lazy" data-original="{{ asset('qian/images/img_4.jpg') }}" alt="Image" class="img-responsive">
                         </figure>
                         <div class="fh5co-text">
                             <h2>Organic Egg</h2>
@@ -210,7 +210,7 @@
                     <a href="{{  asset('qian/images/img_5.jpg') }}" class="fh5co-card-item image-popup">
                         <figure>
                             <div class="overlay"><i class="ti-plus"></i></div>
-                            <img src="{{ asset('qian/images/img_5.jpg') }}" alt="Image" class="img-responsive">
+                            <img class="lazy" data-original="{{ asset('qian/images/img_5.jpg') }}" alt="Image" class="img-responsive">
                         </figure>
                         <div class="fh5co-text">
                             <h2>仓储服务</h2>
@@ -224,7 +224,7 @@
                     <a href="{{  asset('qian/images/img_6.jpg') }}" class="fh5co-card-item image-popup">
                         <figure>
                             <div class="overlay"><i class="ti-plus"></i></div>
-                            <img src="{{ asset('qian/images/img_6.jpg') }}" alt="Image" class="img-responsive">
+                            <img class="lazy" data-original="{{ asset('qian/images/img_6.jpg') }}" alt="Image" class="img-responsive">
                         </figure>
                         <div class="fh5co-text">
                             <h2>冷运服务</h2>
@@ -378,7 +378,7 @@
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
-    
+
     <!-- jQuery -->
     <script src="{{asset('qian/js/jquery.min.js')}}"></script>
     <!-- jQuery Easing -->
@@ -391,6 +391,8 @@
     <script src="{{asset('qian/js/owl.carousel.min.js')}}"></script>
     <!-- countTo -->
     <script src="{{asset('qian/js/jquery.countTo.js')}}"></script>
+    <!-- lazyload -->
+    <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
 
     <!-- Stellar Parallax -->
     <script src="{{asset('qian/js/jquery.stellar.min.js')}}"></script>
@@ -401,7 +403,11 @@
     
     <script src="{{asset('qian/js/moment.min.js')}}"></script>
     <script src="{{asset('qian/js/bootstrap-datetimepicker.min.js')}}"></script>
-
+    <script>
+$("img.lazy").lazyload({
+    effect : "fadeIn"
+});
+</script>
 
     <!-- Main -->
     <script src="{{asset('qian/js/main.js')}}"></script>
