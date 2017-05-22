@@ -26,9 +26,9 @@ Route::post('search', 'SearchController')->name('search');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admin/index',  'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('admin/index',  'HomeController@index')->name('home');
 	Route::resource('company', 'SubCompanyController');
 	Route::resource('company.station', 'SubstationController');
 	Route::resource('station.courier', 'CourierController');
