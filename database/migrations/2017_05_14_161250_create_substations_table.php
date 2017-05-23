@@ -13,6 +13,7 @@ class CreateSubstationsTable extends Migration
      */
     public function up()
     {
+        DB::beginTransaction();
         Schema::create('substations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -20,9 +21,13 @@ class CreateSubstationsTable extends Migration
             $table->bigInteger('phone');
             $table->string('email');
             $table->string('description');
-            $table->integer('sub_company_id');
+            $table->integer('sub_company_id')->unsigned();
             $table->timestamps();
+            $table->foreign('sub_company_id')
+                        ->references('id')->on('sub_companies')
+                        ->onDelete('cascade');
         });
+        DB::commit();
     }
 
     /**

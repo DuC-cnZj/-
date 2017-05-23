@@ -14,7 +14,7 @@ class CourierTableSeeder extends Seeder
     public function run()
     {
        $faker = Faker::create("zh_CN");
-       foreach (range(13, 59) as $key => $value) {
+       foreach (range(1, 40) as $key => $value) {
        	 foreach (range(1, 4) as $index) {
         	Courier::create([
         		'name' => $faker->name,

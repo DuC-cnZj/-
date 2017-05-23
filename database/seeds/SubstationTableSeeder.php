@@ -14,6 +14,7 @@ class SubstationTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create("zh_CN");
+        foreach (range(1, 10) as $key => $value) {
         foreach (range(1, 4) as $index) {
         	Substation::create([
         		'name' => $faker->address .'分站',
@@ -21,9 +22,10 @@ class SubstationTableSeeder extends Seeder
         		'phone' => $faker->phoneNumber,
         		'email' => $faker->email,
         		'description' => $faker->sentence,
-        		'sub_company_id' => 31
+        		'sub_company_id' => $value
 
     		]);
         }
+    }
     }
 }
