@@ -46,6 +46,10 @@ class ThingController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $this->validate($request, [
+            'weight' => 'numeric'
+        ]);
+
        $number = $this->repo->storeThing($request);
         return view('admin.thing._success', compact('number'));
     }
@@ -107,7 +111,7 @@ class ThingController extends Controller
         // dd($request->all());
         $rules = ['number' => 'exists:things'];
         $messages = [
-            'number' => '编号不存在.',
+            'number.exists' => '编号不存在.',
         ];
             $validator = Validator::make($request->all(), $rules, $messages);
 

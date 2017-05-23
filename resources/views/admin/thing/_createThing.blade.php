@@ -66,6 +66,14 @@
                                           </div>
                                       </div>
                                   </form>
+                                        @if ($errors->has('weight'))
+                                              <div class="alert alert-danger">
+                                                  <a href="#" class="close" data-dismiss="alert">
+                                                    &times;
+                                                </a>
+                                                    {{ $errors->first('weight')  }}
+                                              </div>
+                                          @endif
                               </div>
 
                           </div>
