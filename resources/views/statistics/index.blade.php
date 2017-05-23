@@ -16,7 +16,7 @@
                   <div class="col-lg-12">
                       <section class="panel panel-info">
                           <header class="panel-heading">
-                              发货管理
+                              统计管理
                           </header>
                           <div class="panel-body">
                               <div class="form" id="app">
