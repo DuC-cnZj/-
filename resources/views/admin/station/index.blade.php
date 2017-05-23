@@ -36,15 +36,13 @@
                                  <td>{{ $sub->phone }}</td>
                                  <td>{{ $sub->created_at->toDateString() }}</td>
                                  <td>
-                                 @can('delete', $sub)
                                   <div class="btn-group">
                                       <a class="btn btn-success" href="{{ route('station.courier.index', $sub->id) }}"><i class="fa fa-users"></i>快递员管理</a>
+                                 @can('delete', $sub)
                                       <a class="btn btn-primary" href="{{ route('company.station.edit', [$id, $sub]) }}"><i class="fa fa-cog"></i></a>
                                       @include('admin.station._deleteSubStation', ['company_id' => $sub->SubCompany->id, 'sub_id' => $sub->id])
-                                  </div>                                          
-                                 @else
-                                     <a href="#" class="btn btn-danger">没有权限</a>
                                  @endcan
+                                  </div>                                          
                                   </td>
                               </tr>
                 @endforeach                   

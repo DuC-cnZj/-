@@ -10,6 +10,7 @@ use App\Repositories\ThingRepository;
 
 class ThingController extends Controller
 {
+    protected $repo;
     public function __construct(ThingRepository $thing)
     {
         $this->repo = $thing;

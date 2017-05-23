@@ -8,6 +8,7 @@ use App\Repositories\SubCompanyRepository;
 
 class SubCompanyController extends Controller
 {
+    protected $repo;
     public function __construct(SubCompanyRepository $company)
     {
         $this->repo = $company;

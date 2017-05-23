@@ -5,7 +5,10 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <i class="fa fa-user"></i>{{ $li->name }}
-                        @include('admin.courier._deleteCourier', ['station_id' => $station_id, 'courier_id' => $li->id])
+                        @can('delete', $li)
+                            @include('admin.courier._deleteCourier', ['station_id' => $station_id, 'courier_id' => $li->id])
+                        @endcan
+
                     </div>
                     <div class="panel-body">
                         <li><strong>住址：</strong>{{ $li->addr }}</li>

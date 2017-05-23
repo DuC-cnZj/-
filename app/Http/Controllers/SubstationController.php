@@ -9,6 +9,7 @@ use App\Repositories\SubstationRepository;
 
 class SubstationController extends Controller
 {
+    protected $repo;
     public function __construct(SubstationRepository $station)
     {
         $this->repo = $station;
