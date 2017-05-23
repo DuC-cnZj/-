@@ -58,8 +58,7 @@
                     </span>
                 @endif
             </div>
-
-
+            {!! Geetest::render() !!}
             <label class="checkbox">
                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                 <span class="pull-right"><a  href="{{ route('password.request') }}">
