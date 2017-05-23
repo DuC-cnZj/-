@@ -79,6 +79,8 @@ class SubCompanyController extends Controller
      */
     public function update(Request $request, SubCompany $subCompany, $id)
     {
+             $this->authorize('update', $subCompany);
+             // $this->authorize('show', SubCompany::class);
             $this->repo->updateCompany($request, $id);
             return redirect()->route('company.index');
     }

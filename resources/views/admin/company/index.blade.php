@@ -7,7 +7,9 @@
 		<ol class="breadcrumb">
 			<li><i class="fa fa-home"></i><a href="index.html">Index</a></li>
 			<li><i class="fa fa-table"></i>旗下分公司</li>
-		<a href="{{ route('company.create') }}" class="pull-right"><i class="fa fa-plus"></i>注册分公司</a>
+              @can('create', App\SubCompany::class)
+                      <a href="{{ route('company.create') }}" class="pull-right"><i class="fa fa-plus"></i>注册分公司</a>
+              @endcan
 		</ol>
 	</div>
 
@@ -34,8 +36,12 @@
                                  <td>{{ $sub->created_at->toDateString() }}</td>
                                  <td>
                                   <div class="btn-group">
+                                @can('delete', $sub)
                                       <a class="btn btn-primary" href="{{ route('company.edit', $sub) }}"><i class="fa fa-cog"></i></a>
-                                      @include('admin.company._deleteSubCompany', $sub)
+                                        @include('admin.company._deleteSubCompany', $sub)
+                                  @else
+                                        <a href="#" class="btn btn-danger">没有权限</a>
+                                @endcan
                                   </div>
                                   </td>
                               </tr>
