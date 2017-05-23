@@ -15,7 +15,7 @@
 
                    <div class="row" >
                   <div class="col-lg-12">
-                      <section class="panel panel-warning">
+                      <section class="panel panel-info">
                           <header class="panel-heading">
                               发货管理
                           </header>
@@ -29,7 +29,15 @@
                                           <div class="col-lg-2">
                                               <input class="form-control" id="cnumber" name="number"  type="text" required />
                                           </div>
+                                      <div>
+                                          @if ($errors->has('number'))
+                                                  <span class="help-block">
+                                                      <strong>{{ $errors->first('number') }}</strong>
+                                                  </span>
+                                          @endif
+                                      </div>
                                       </div>  
+
                                       <div class="form-group ">
                                           <label for="sel_menu2" class="control-label col-lg-2">此刻所在地 <span class="required">*</span></label>
                                                  <div class="col-lg-6">            
@@ -60,17 +68,18 @@
                                       </div>
                                     <div class="form-group ">
                                           <label for="cphone" class="control-label col-lg-2">是否送达 <span class="required">*</span></label>
-				<div>
-				  <label class="checkbox-inline">
-				    <input type="radio" name="status" id="optionsRadios3" value="0" checked>运输中
-				  </label>
-				  <label class="checkbox-inline">
-				    <input type="radio" name="status" id="optionsRadios4" value="1">已送达
-				  </label>
-				</div>
+                            				<div>
+                            				  <label class="checkbox-inline">
+                            				    <input type="radio" name="status" id="optionsRadios3" value="0" checked>运输中
+                            				  </label>
+                            				  <label class="checkbox-inline">
+                            				    <input type="radio" name="status" id="optionsRadios4" value="1">已送达
+                            				  </label>
+                            				</div>
+
                                       </div>   
 
-                                   
+
                                       <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
                                               <button class="btn btn-primary" type="submit">Save</button>
@@ -78,6 +87,16 @@
                                           </div>
                                       </div>
                                   </form>
+                                                                         <div>
+                                          @if (session('msg'))
+                                                      <div class="alert alert-warning">
+                                                        <a href="#" class="close" data-dismiss="alert">
+                                                            &times;
+                                                        </a>
+                                                        <strong>警告！</strong>{{ session('msg') }}
+                                                    </div>
+                                          @endif
+                                      </div>
                               </div>
 
                           </div>

@@ -7,6 +7,7 @@ use App\SubCompany;
 use App\Substation;
 use Illuminate\Http\Request;
 use App\Repositories\ThingRepository;
+use Validator;
 
 class ThingController extends Controller
 {
@@ -104,8 +105,19 @@ class ThingController extends Controller
     public function updateThing(Request $request)
     {
         // dd($request->all());
-        $this->repo->updateThing($request);
-        return redirect()->route('thing.index');
+        $rules = ['number' => 'exists:things'];
+        $messages = [
+            'number' => '编号不存在.',
+        ];
+            $validator = Validator::make($request->all(), $rules, $messages);
+
+            if ($validator->fails()) {
+                return redirect('deliver')
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+       return $this->repo->updateThing($request);
+      
     }
     public function statistics()
     {

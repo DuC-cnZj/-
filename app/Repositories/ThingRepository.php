@@ -36,6 +36,9 @@ class ThingRepository
 	public function updateThing($request)
 	{
 		$thing = Thing::where('number', $request->number)->first();
+		if ($thing->status) {
+			return redirect()->back()->with('msg', '已经运达!!');
+		}
 		// dd($thing->path);
 		$path = $thing->path . '-' . $request->station;
 		// dd($path);
@@ -44,6 +47,7 @@ class ThingRepository
 			'courier_id' => $request->courier_id,
 			'status' => $request->status
 		]);
+		return redirect()->route('thing.index');
 	}
 
 	public function tongjiAll($request)
