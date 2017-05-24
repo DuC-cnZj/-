@@ -4,6 +4,8 @@ namespace App\Repositories;
 use App\Thing;
 use App\Courier;
 use App\Substation;
+use Illuminate\Http\Request;
+use Validator;
 
 /**
 * 
@@ -73,7 +75,16 @@ class ThingRepository
 	}
 	public function courierTj($request)
 	{
-
+		$rules = ['courier_name' => 'exists:couriers,name'];
+		$messages = [
+		    'courier_name.exists' => '对不起，不存在该快递员！',
+		];
+		$validator = Validator::make($request->all(), $rules, $messages);
+	        if ($validator->fails()) {
+	            return redirect()->back()
+	                        ->withErrors($validator)
+	                        ->withInput();
+	        }
 		$courier = Courier::where('name', $request->courier_name)->first();
 		$name = $request->courier_name;
 		$things = $courier->things;

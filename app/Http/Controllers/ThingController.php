@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Thing;
 use App\SubCompany;
 use App\Substation;
-use Illuminate\Http\Request;
 use App\Repositories\ThingRepository;
+use Illuminate\Http\Request;
 use Validator;
 
 class ThingController extends Controller

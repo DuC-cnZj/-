@@ -89,6 +89,7 @@
                                   </form>
                                                                          <div>
                                           @if (session('msg'))
+                                                      <br>
                                                       <div class="alert alert-warning">
                                                         <a href="#" class="close" data-dismiss="alert">
                                                             &times;
