@@ -27,6 +27,12 @@ class HomeController extends Controller
     {
         return view('admin.index');
     }
+
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     public function store(Request $request)
     {
         // dd($request->hasFile('file'));

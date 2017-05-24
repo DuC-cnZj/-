@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@welcome');
 
-Route::get('duc', function () {
+/*Route::get('duc', function () {
     return view('duc');
-});
+});*/
 Route::post('store', 'HomeController@store')->name('store');
 
 
