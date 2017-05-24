@@ -47,7 +47,7 @@
                     </span>
                 @endif
             </div>
- {!! Geetest::render() !!}
+            
             <div class="input-group{{ $errors->has('email') ? ' has-error' : '' }}">
               <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span>
                   <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
