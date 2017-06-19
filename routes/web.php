@@ -21,6 +21,8 @@ Route::post('store', 'HomeController@store')->name('store');
 
 Route::post('search', 'SearchController')->name('search');
 
+Route::post('/deploy','DeploymentController@deploy');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
